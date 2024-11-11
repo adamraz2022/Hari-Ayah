@@ -1,0 +1,217 @@
+/* Resetting some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gaya untuk tombol */
+.play-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+}
+.play-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Gaya untuk pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000;
+}
+.popup.active {
+    display: block;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+.overlay.active {
+    display: block;
+}
+
+.close-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.close-button:hover {
+    background-color: #c0392b;
+}
+
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('background.jpg'); /* Ganti dengan lokasi gambar Anda */
+    background-size: cover; /* Mengisi seluruh layar */
+    background-position: center; /* Memposisikan gambar di tengah */
+    background-attachment: fixed; /* Agar background tetap saat scroll */
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header styles */
+header {
+    background-color: #838386; /* Efek transparansi agar teks tetap terbaca */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* Image gallery styles */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Image container styles */
+.image-container {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Creating the 'paperclip' effect */
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 20px;
+    height: 100%;
+    background-color: #838386;
+    box-shadow: 10px 0px 15px rgba(0, 0, 0, 0.1);
+    transform: rotate(10deg);
+    z-index: 1;
+}
+
+.image-container::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 20px;
+    height: 100%;
+    background-color: #333;
+    box-shadow: -10px 0px 15px rgba(0, 0, 0, 0.1);
+    transform: rotate(-10deg);
+    z-index: 1;
+}
+
+/* Image styles */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Hover effect for images */
+.image-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for images to fade in */
+@keyframes fadeInImages {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Start from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End in original position */
+    }
+}

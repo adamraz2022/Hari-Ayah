@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Selamat Hari Ayah Nasional</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .play-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-decoration: none;
+        }
+        .play-button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+        .play-button:active {
+            background-color: #1f6391;
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Hari Ayah Nasional!</h1>
+        <p>Terima kasih untuk semua pengorbanan dan kasih sayang Ayah.</p>
+    </header>
+
+    <!-- Audio -->
+    <audio id="audio" loop>
+        <source src="lagu.mp3" type="audio/mp3">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <!-- Tombol untuk membuka pop-up -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button class="play-button" onclick="openPopup()">Klik Disini</button>
+    </div>
+
+    <!-- Pop-up dan overlay -->
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    <div class="popup" id="popup">
+        <h2>Selamat Hari Ayah!</h2>
+        <p>Terima kasih telah menekan tombol ini. Lagu akan mulai diputar.</p>
+        <button class="close-button" onclick="closePopup()">Tutup</button>
+    </div>
+
+    <main>
+        <section class="content">
+            <h2>Ayah, Pahlawan dalam Keluarga</h2>
+            <p>Hari Ayah Nasional adalah waktu yang sangat berarti bagiku untuk mengungkapkan betapa berharganya ayah dalam hidupku.
+                Terima kasih atas semua cinta, pengorbanan, dan dukungan tanpa batas yang telah ayah berikan selama ini.
+                Ayah selalu menjadi pahlawan di balik setiap kebahagiaan dan langkah keluarga kami.
+                Pada hari ini, aku ingin lebih menghargai dan mengingat semua hal yang telah ayah lakukan.</p>
+        </section>
+    </main>
+
+    <script>
+        function openPopup() {
+            document.getElementById('popup').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+            document.getElementById('audio').play();
+        }
+
+        function closePopup() {
+            document.getElementById('popup').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+    </script>
+        <section class="image-gallery">
+            <div class="image-container">
+                <img src="foto1.jpg" alt="Foto 1">
+            </div>
+            <div class="image-container">
+                <img src="foto2.jpg" alt="Foto 2">
+            </div>
+            <div class="image-container">
+                <img src="foto3.jpg" alt="Foto 3">
+            </div>
+            <div class="image-container">
+                <img src="foto4.jpg" alt="Foto 4">
+            </div>
+            <div class="image-container">
+                <img src="foto5.jpg" alt="Foto 5">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hari Ayah Nasional.</p>
+    </footer>
+</body>
+</html>
